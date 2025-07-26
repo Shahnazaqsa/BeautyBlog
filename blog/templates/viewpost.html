@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container py-5 px-3 px-sm-4">
+  <div
+    class="bg-white shadow rounded p-4 p-md-5 mx-auto"
+    style="max-width: 800px"
+  >
+    <h1 class="fs-2 fw-bold text-dark mb-4">{{ post.title }}</h1>
+
+    {% if post.thumbnail %}
+    <img
+      src="{{ post.thumbnail.url }}"
+      alt="Thumbnail"
+      class="img-fluid rounded mb-4"
+      style="height: 250px; object-fit: cover; width: 100%"
+    />
+    {% endif %}
+
+    <div class="text-dark mb-4" style="line-height: 1.7; font-size: 1.1rem">
+      {{ post.content|linebreaks }}
+    </div>
+
+    <div class="text-muted small mb-4">
+      <span>Published on {{ post.date_posted|date:"d/m/Y" }}</span><br />
+      <span>
+        By
+        <strong
+          >{{ post.author.first_name }} {{ post.author.last_name }}</strong
+        >
+      </span>
+    </div>
+
+    {% if user.is_authenticated and post.author == user %}
+    <a
+      href="{% url 'editpost' post.id %}"
+      class="btn btn-pink text-white px-4 py-2 rounded"
+      style="background-color: #ec4899"
+    >
+      Edit Post
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

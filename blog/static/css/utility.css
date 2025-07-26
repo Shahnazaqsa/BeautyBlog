@@ -1,0 +1,242 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f5f2, #eae7dc);
+}
+
+.two-column-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section {
+  background-color: rgb(255, 221, 242);
+  color: rgb(3, 3, 3);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-section form input,
+.form-section form textarea,
+.form-section form select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-section form button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-section span {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.form-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.welcome-section {
+  background-color: rgb(255, 221, 242);
+  color: rgb(3, 3, 3);
+  padding: 2rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color:rgb(255, 221, 242);
+}
+
+.form-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+   background-color: rgb(255, 221, 242);
+   color: black;
+}
+.form-control {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+
+.form-button {
+  @apply bg-blue-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-700 transition duration-200;
+}
+
+.form-grid {
+  @apply grid gap-4;
+}
+
+.alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: auto;
+  max-width: 300px;
+}
+
+.alert {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #000000;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 15px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.alert.success {
+  background-color: #b2f1b4;
+}
+
+.alert.error {
+  background-color: #d3928d;
+}
+
+.alert.info {
+  background-color: #accce7;
+}
+
+.alert.warning {
+  background-color: #e8c99c;
+}
+
+.close-btn {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; top: 0px; }
+  to { opacity: 1; top: 20px; }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #ff4f81;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e03b6d;
+}
+
+h1,h2,h3{
+    font-family: 'Playfair Display', serif;
+    color: #ff4f81;
+    font-weight: 100;
+    font-size: 30px;
+}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% block content %} {% load form_tags %}
+
+<div
+  class="min-vh-100 d-flex align-items-center justify-content-center px-4 py-5 bg-white"
+>
+  <div class="w-100" style="max-width: 42rem">
+    <div class="p-4 p-sm-5 bg-white border border-pink-400 rounded-xl shadow">
+      <h2 class="text-center text-pink-500 mb-4" style="font-size: 1.75rem">
+        Add New Post
+      </h2>
+
+      <form
+        action="{% url 'addpost' %}"
+        method="POST"
+        enctype="multipart/form-data"
+        class="mb-3"
+      >
+        {% csrf_token %} {% for field in form %}
+        <div class="mb-3">
+          <label
+            for="{{ field.id_for_label }}"
+            class="form-label text-gray-700 fw-semibold"
+          >
+            {{ field.label }}
+          </label>
+          {{ field|add_class:"form-control" }}
+          <span class="text-danger small">{{ field.errors }}</span>
+        </div>
+        {% endfor %}
+
+        <div class="text-center mt-4">
+          <button type="submit" class="form-button">Publish Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

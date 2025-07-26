@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block content %}
+<div class="dashboard-container px-4 py-5">
+  <div
+    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3"
+  >
+    <h1 class="fw-bold fs-3 text-pink">Your Dashboard</h1>
+    <a href="{% url 'addpost' %}" class="btn btn-pink px-4 py-2">
+      + Create New Post
+    </a>
+  </div>
+
+  {% if posts %}
+  <div class="table-responsive">
+    <table class="table custom-table mb-0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date Posted</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        <tr>
+          <td>
+            <a href="{% url 'viewpost' post.id %}" class="post-title-link">
+              {{ post.title }}
+            </a>
+          </td>
+          <td>{{ post.date_posted }}</td>
+          <td class="text-center">
+            <a href="{% url 'editpost' post.id %}" class="action-link edit-link"
+              >Edit</a
+            >
+            <a
+              href="{% url 'delete_post' post.id %}"
+              class="action-link delete-link"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="text-muted mt-3">You haven't posted anything yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
